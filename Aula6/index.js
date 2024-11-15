@@ -1,8 +1,10 @@
 import express from "express"
+import path from "path"
 const app = express() 
+const __dirname = path.resolve()
 
 app.get("/", function(req, res){
-    res.send("Seja bem-vindo ao meu app!")
+    res.sendFile(__dirname + "/html/index.html")
 })
 
 app.get("/sobre", function(req,res){
